@@ -1,7 +1,7 @@
-# Leap Year
+# Triangle
 
 ## Description
-Simple web app using javascript to check if input year is a leap year, or if a whole number / plain text.
+Simple web app using javascript to check if input is a triangle and if so, what type it is.
 
 ## License
 MIT <2016> <Epicodus>
