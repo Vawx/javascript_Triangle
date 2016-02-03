@@ -42,3 +42,37 @@ Triangle.prototype.scalene = function( ) {
     }
     return false;
 }
+
+$(document).ready( function( ) {
+   $("form#triangle").submit( function(event) {
+       event.preventDefault( );
+       
+       var x = $("#new-triangle-x").val( );
+       var y = $("#new-triangle-y").val( );
+       var z = $("#new-triangle-z").val( );         
+       
+       var checkTriangle = new Triangle(x, y, z);
+       
+       console.log( checkTriangle.isTriangle( ) );
+       
+       if( checkTriangle.isTriangle( ) )
+       {
+           if( checkTriangle.equilateral( ) )
+           {
+                $("ul#triangles").append("<li><span class='year'>" + "Equilateral Triangle" + "</span></li>" );   
+           }
+           else if( checkTriangle.isosceles( ) )
+           {
+                $("ul#triangles").append("<li><span class='year'>" + "Isosceles Triangle" + "</span></li>" );                  
+           }
+           else if( checkTriangle.scalene( ) )
+           {
+                $("ul#triangles").append("<li><span class='year'>" + "Scalene Triangle" + "</span></li>" );   
+           }
+       }   
+       else
+       {
+            $("ul#triangles").append("<li><span class='year'>" + "NOT A TRIANGLE" + "</span></li>" );   
+       }  
+   });
+});
